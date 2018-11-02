@@ -8,11 +8,13 @@ public class ImageFrame extends JFrame{
 	
 	private Color[][] colors;
 	private int width, height;
+	private boolean borders;
 
 	public ImageFrame(int width, int height, Color[][] colors) {
 		this.colors = colors;
 		this.width = width;
 		this.height = height;
+		this.borders = true;
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPreferredSize(new Dimension(width, height));
@@ -30,6 +32,9 @@ public class ImageFrame extends JFrame{
 				g.setColor(colors[i][j]);
 				g.fillRect(i * x, j * y, x, y);
 			}
+		}
+		if(borders) {
+			
 		}
 	}
 }
