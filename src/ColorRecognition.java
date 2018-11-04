@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.awt.image.PixelGrabber;
@@ -17,7 +16,7 @@ public class ColorRecognition {
 
 	}
 
-	public Color[][] AnalyzeImage(BufferedImage img, int hTiles, int vTiles) {
+	public Color[][] AnalyzeImageColor(BufferedImage img, int hTiles, int vTiles) {
 
 		returnParams = new Color[hTiles][vTiles];
 
@@ -26,14 +25,14 @@ public class ColorRecognition {
 
 		for (int i = 0; i < returnParams.length; i++) {
 			for (int j = 0; j < returnParams[i].length; j++) {
-				returnParams[i][j] = AnalyzeImage(img.getSubimage(i * width, j * heigth, width, heigth));
+				returnParams[i][j] = AnalyzeImageColor(img.getSubimage(i * width, j * heigth, width, heigth));
 			}
 		}
 
 		return returnParams;
 	}
 
-	public Color AnalyzeImage(Image img) {
+	public Color AnalyzeImageColor(Image img) {
 
 		grabber = new PixelGrabber(img, 0, 0, -1, -1, false);
 
