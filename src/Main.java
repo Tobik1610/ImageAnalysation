@@ -17,7 +17,7 @@ public class Main {
 		try {
 			img = ImageIO.read(new File("src/sonnenuntergang.jpg"));
 			
-			color = colorReconizer.AnalyzeImage(img, 10, 10);//Werte nicht größer als Auflösung
+			color = colorReconizer.AnalyzeImage(img, 50, 50);//Werte nicht größer als Auflösung
 			new ImageFrame(img.getWidth(), img.getHeight(), color, true);
 			
 //			color = colorReconizer.AnalyzeImage(img, img.getWidth(), img.getHeight());//Werte nicht größer als Auflösung
